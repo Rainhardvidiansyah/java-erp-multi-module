@@ -1,0 +1,151 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.mini.erp</groupId>
+	<artifactId>mini-erp</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+
+	<name>mini-erp</name>
+	<description>Mini ERP Core Module</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.3.1</version>
+		<relativePath/>
+	</parent>
+
+	<properties>
+		<java.version>17</java.version>
+		<jwt.version>0.12.4</jwt.version>
+	</properties>
+
+	<modules>
+		<module>mini-erp-product</module>
+		<module>mini-erp-user</module>
+		<module>mini-erp-controllers</module>
+		<module>mini-erp-helper</module>
+	</modules>
+
+	<dependencyManagement>
+
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>3.3.1</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.mini.erp.product</groupId>
+				<artifactId>mini-erp-product</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.mini.erp.user</groupId>
+				<artifactId>mini-erp-user</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.mini.erp.controllers</groupId>
+				<artifactId>mini-erp-controllers</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.mini.erp.helper</groupId>
+				<artifactId>mini-erp-helper</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-api</artifactId>
+				<version>${jwt.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-impl</artifactId>
+				<version>${jwt.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
+				<version>${jwt.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+
+
+
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+
+
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+	</dependencies>
+
+
+
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+<!--				<plugin>-->
+<!--					<groupId>org.apache.maven.plugins</groupId>-->
+<!--					<artifactId>maven-compiler-plugin</artifactId>-->
+<!--					<version>3.8.1</version>-->
+<!--					<configuration>-->
+<!--						<source>${java.version}</source>-->
+<!--						<target>${java.version}</target>-->
+<!--					</configuration>-->
+<!--				</plugin>-->
+
+
+
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+
+
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
+

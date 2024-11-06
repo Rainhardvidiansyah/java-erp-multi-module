@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: controller
+  config:
+    import: classpath:application-product.yml, classpath:application-user.yml
+  #main:
+    #allow-bean-definition-overriding: true
+    #allow-circular-references: true
